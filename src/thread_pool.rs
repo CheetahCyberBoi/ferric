@@ -5,6 +5,8 @@ use std::{
     sync::{mpsc, Arc, Mutex},
     thread
 };
+
+use log::{debug, error, warn, info, trace};
 /// A thread-pool that has a finite number of threads for execution.
 pub struct ThreadPool {
     workers: Vec<Worker>,
@@ -28,6 +30,8 @@ impl ThreadPool {
             workers.push(Worker::new(id, Arc::clone(&receiver)));
         }
 
+        info!("Thread pool initialized!");
+
         ThreadPool { workers, dispatch_sender: sender }
     }
     ///Sends the given closure to the `ThreadPool`'s Workers to be executed.
@@ -37,7 +41,7 @@ impl ThreadPool {
         F: FnOnce() + Send + 'static,
     {
         let job = Box::new(f);
-        
+        info!("Sending closure to thread pool workers...");
         self.dispatch_sender.send(job).expect("ERR: Failed to send job to worker threads!");
 
     }
@@ -56,7 +60,7 @@ impl Worker {
             //NOTE: see if i can perform some `and_then` tomfuckery here
             let job = receiver.lock().unwrap().recv().unwrap();
 
-            println!("Worker {id} got a job, executing.");
+            info!("Worker {id} got a job, executing.");
 
             job();
         });
