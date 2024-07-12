@@ -1,16 +1,14 @@
 use ferric::{App, Config};
 
 fn main() {
-    let app = App::new(Config {
+    let mut app = App::new(Config {
+        outfacing_ip: std::net::SocketAddr::V4(std::net::SocketAddrV4::new(std::net::Ipv4Addr::new(127, 0, 0, 1), 7878)),
         debug_logs: true,
         num_threads_in_pool: 5usize,
+        root_uri: std::path::PathBuf::new(),
     });
     app.initialize_logging().unwrap();
-    log::info!("Logs are gaming!");
-    for i in 0..5 {
-        app.client_thread_pool.execute(move || {
-            log::info!("thready mcthreadson numero {i} is existing...");
-        })
-    }
-    
+    log::info!("Logging system initialized!");
+
+    app.run().unwrap_or_else(|err| eprintln!("ERR: Failed to start Ferric due to: {err}"));
 }
