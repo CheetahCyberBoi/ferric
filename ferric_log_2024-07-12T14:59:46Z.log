@@ -1,0 +1,6 @@
+(2024-07-12T14:59:46Z INFO) [ferric] Logging system initialized!
+(2024-07-12T14:59:46Z INFO) [ferric] Running app...
+(2024-07-12T14:59:46Z INFO) [ferric] Bound to port 7878, outfacing IP is: 127.0.0.1
+(2024-07-12T14:59:52Z INFO) [ferric] Connection established!
+(2024-07-12T14:59:52Z INFO) [ferric::thread_pool] Sending closure to thread pool workers...
+(2024-07-12T14:59:52Z INFO) [ferric::thread_pool] Worker 0 got a job, executing.

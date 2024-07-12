@@ -4,9 +4,8 @@ use std::{
     io::{prelude::*, BufReader},
 };
 
-use log::{info, debug};
-use http::{Request, Response};
-
+use log::{info, debug, warn};
+use httparse::{Request, Header};
 
 pub mod thread_pool;
 
@@ -34,6 +33,10 @@ pub struct Config {
     ///The path to be used as the root URI.
     pub root_uri: std::path::PathBuf,
 }
+
+//NOTE: make these into config options in the future
+const MAX_HEADERS: usize = 16;
+
 
 impl App {
     pub fn new(config: Config) -> App {
@@ -87,10 +90,29 @@ impl App {
     fn handle_connection(&self, mut stream: TcpStream) {
         self.client_thread_pool.execute(move || {
             //Parse the client's request into usable string data.
-            let mut buf_reader = BufReader::new(&mut stream);
-            //TODO: figure out how to read the request from the bufreader without trashing the \r\#![no_std]
+            let mut req_buf = stream.bytes().map(|res| res.unwrap()).collect::<Vec<u8>>();
+            //TODO: figure out how to extract this logic into a different function without borrow
+            //checker throwing a fit
+            let mut headers: Vec<Header> = Vec::with_capacity(MAX_HEADERS);
+            let mut req = Request::new(&mut headers);
+            let res = req.parse(&req_buf);
+            if res.expect("Failed to parse request!").is_partial() {
+                match req.path {
+                    Some(ref path) => {
+                        //we have an actual path here, do the thingies
+                        info!("Request parsed!");
+                        debug!("Request is asking for file: {path}");
+                    },
+                    None => {
+                        //gotta read more and parse again
+                        warn!("Unable to fully parse request. Retrying...");
+                    }
+                }
+            }
+
              
-            debug!("Request from client: {:#?}", &request_string);
         });
     }
+
+
 }
