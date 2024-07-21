@@ -1,0 +1,733 @@
+(2024-07-21T02:11:39Z INFO) [ferric] Logging system initialized!
+(2024-07-21T02:11:39Z INFO) [ferric] Running app...
+(2024-07-21T02:11:39Z INFO) [ferric] Bound to port 7878, outfacing IP is: 127.0.0.1
+(2024-07-21T02:11:41Z INFO) [ferric] Connection established!
+(2024-07-21T02:11:41Z INFO) [ferric::thread_pool] Sending closure to thread pool workers...
+(2024-07-21T02:11:41Z INFO) [ferric::thread_pool] Worker 0 got a job, executing.
+(2024-07-21T02:11:41Z INFO) [ferric] Request parsed!
+(2024-07-21T02:11:41Z DEBUG) [ferric] Request: Request {
+    method: Some(
+        "GET",
+    ),
+    path: Some(
+        "/",
+    ),
+    version: Some(
+        1,
+    ),
+    headers: [
+        Header {
+            name: "Host",
+            value: "127.0.0.1:7878",
+        },
+        Header {
+            name: "User-Agent",
+            value: "Mozilla/5.0 (X11; Linux x86_64; rv:127.0) Gecko/20100101 Firefox/127.0",
+        },
+        Header {
+            name: "Accept",
+            value: "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        },
+        Header {
+            name: "Accept-Language",
+            value: "en-US,en;q=0.5",
+        },
+        Header {
+            name: "Accept-Encoding",
+            value: "gzip, deflate, br, zstd",
+        },
+        Header {
+            name: "DNT",
+            value: "1",
+        },
+        Header {
+            name: "Sec-GPC",
+            value: "1",
+        },
+        Header {
+            name: "Connection",
+            value: "keep-alive",
+        },
+        Header {
+            name: "Upgrade-Insecure-Requests",
+            value: "1",
+        },
+        Header {
+            name: "Sec-Fetch-Dest",
+            value: "document",
+        },
+        Header {
+            name: "Sec-Fetch-Mode",
+            value: "navigate",
+        },
+        Header {
+            name: "Sec-Fetch-Site",
+            value: "none",
+        },
+        Header {
+            name: "Sec-Fetch-User",
+            value: "?1",
+        },
+        Header {
+            name: "Priority",
+            value: "u=1",
+        },
+    ],
+}
+(2024-07-21T02:11:41Z INFO) [ferric] Connection established!
+(2024-07-21T02:11:41Z INFO) [ferric::thread_pool] Sending closure to thread pool workers...
+(2024-07-21T02:11:41Z INFO) [ferric::thread_pool] Worker 1 got a job, executing.
+(2024-07-21T02:11:41Z INFO) [ferric] Request parsed!
+(2024-07-21T02:11:41Z DEBUG) [ferric] Request: Request {
+    method: Some(
+        "GET",
+    ),
+    path: Some(
+        "/",
+    ),
+    version: Some(
+        1,
+    ),
+    headers: [
+        Header {
+            name: "Host",
+            value: "127.0.0.1:7878",
+        },
+        Header {
+            name: "User-Agent",
+            value: "Mozilla/5.0 (X11; Linux x86_64; rv:127.0) Gecko/20100101 Firefox/127.0",
+        },
+        Header {
+            name: "Accept",
+            value: "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        },
+        Header {
+            name: "Accept-Language",
+            value: "en-US,en;q=0.5",
+        },
+        Header {
+            name: "Accept-Encoding",
+            value: "gzip, deflate, br, zstd",
+        },
+        Header {
+            name: "DNT",
+            value: "1",
+        },
+        Header {
+            name: "Sec-GPC",
+            value: "1",
+        },
+        Header {
+            name: "Connection",
+            value: "keep-alive",
+        },
+        Header {
+            name: "Upgrade-Insecure-Requests",
+            value: "1",
+        },
+        Header {
+            name: "Sec-Fetch-Dest",
+            value: "document",
+        },
+        Header {
+            name: "Sec-Fetch-Mode",
+            value: "navigate",
+        },
+        Header {
+            name: "Sec-Fetch-Site",
+            value: "none",
+        },
+        Header {
+            name: "Sec-Fetch-User",
+            value: "?1",
+        },
+        Header {
+            name: "Priority",
+            value: "u=1",
+        },
+    ],
+}
+(2024-07-21T02:11:41Z INFO) [ferric] Connection established!
+(2024-07-21T02:11:41Z INFO) [ferric::thread_pool] Sending closure to thread pool workers...
+(2024-07-21T02:11:41Z INFO) [ferric::thread_pool] Worker 2 got a job, executing.
+(2024-07-21T02:11:41Z INFO) [ferric] Request parsed!
+(2024-07-21T02:11:41Z DEBUG) [ferric] Request: Request {
+    method: Some(
+        "GET",
+    ),
+    path: Some(
+        "/",
+    ),
+    version: Some(
+        1,
+    ),
+    headers: [
+        Header {
+            name: "Host",
+            value: "127.0.0.1:7878",
+        },
+        Header {
+            name: "User-Agent",
+            value: "Mozilla/5.0 (X11; Linux x86_64; rv:127.0) Gecko/20100101 Firefox/127.0",
+        },
+        Header {
+            name: "Accept",
+            value: "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        },
+        Header {
+            name: "Accept-Language",
+            value: "en-US,en;q=0.5",
+        },
+        Header {
+            name: "Accept-Encoding",
+            value: "gzip, deflate, br, zstd",
+        },
+        Header {
+            name: "DNT",
+            value: "1",
+        },
+        Header {
+            name: "Sec-GPC",
+            value: "1",
+        },
+        Header {
+            name: "Connection",
+            value: "keep-alive",
+        },
+        Header {
+            name: "Upgrade-Insecure-Requests",
+            value: "1",
+        },
+        Header {
+            name: "Sec-Fetch-Dest",
+            value: "document",
+        },
+        Header {
+            name: "Sec-Fetch-Mode",
+            value: "navigate",
+        },
+        Header {
+            name: "Sec-Fetch-Site",
+            value: "none",
+        },
+        Header {
+            name: "Sec-Fetch-User",
+            value: "?1",
+        },
+        Header {
+            name: "Priority",
+            value: "u=1",
+        },
+    ],
+}
+(2024-07-21T02:11:41Z INFO) [ferric] Connection established!
+(2024-07-21T02:11:41Z INFO) [ferric::thread_pool] Sending closure to thread pool workers...
+(2024-07-21T02:11:41Z INFO) [ferric::thread_pool] Worker 3 got a job, executing.
+(2024-07-21T02:11:41Z INFO) [ferric] Request parsed!
+(2024-07-21T02:11:41Z DEBUG) [ferric] Request: Request {
+    method: Some(
+        "GET",
+    ),
+    path: Some(
+        "/",
+    ),
+    version: Some(
+        1,
+    ),
+    headers: [
+        Header {
+            name: "Host",
+            value: "127.0.0.1:7878",
+        },
+        Header {
+            name: "User-Agent",
+            value: "Mozilla/5.0 (X11; Linux x86_64; rv:127.0) Gecko/20100101 Firefox/127.0",
+        },
+        Header {
+            name: "Accept",
+            value: "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        },
+        Header {
+            name: "Accept-Language",
+            value: "en-US,en;q=0.5",
+        },
+        Header {
+            name: "Accept-Encoding",
+            value: "gzip, deflate, br, zstd",
+        },
+        Header {
+            name: "DNT",
+            value: "1",
+        },
+        Header {
+            name: "Sec-GPC",
+            value: "1",
+        },
+        Header {
+            name: "Connection",
+            value: "keep-alive",
+        },
+        Header {
+            name: "Upgrade-Insecure-Requests",
+            value: "1",
+        },
+        Header {
+            name: "Sec-Fetch-Dest",
+            value: "document",
+        },
+        Header {
+            name: "Sec-Fetch-Mode",
+            value: "navigate",
+        },
+        Header {
+            name: "Sec-Fetch-Site",
+            value: "none",
+        },
+        Header {
+            name: "Sec-Fetch-User",
+            value: "?1",
+        },
+        Header {
+            name: "Priority",
+            value: "u=1",
+        },
+    ],
+}
+(2024-07-21T02:11:41Z INFO) [ferric] Connection established!
+(2024-07-21T02:11:41Z INFO) [ferric::thread_pool] Sending closure to thread pool workers...
+(2024-07-21T02:11:41Z INFO) [ferric::thread_pool] Worker 4 got a job, executing.
+(2024-07-21T02:11:41Z INFO) [ferric] Request parsed!
+(2024-07-21T02:11:41Z DEBUG) [ferric] Request: Request {
+    method: Some(
+        "GET",
+    ),
+    path: Some(
+        "/",
+    ),
+    version: Some(
+        1,
+    ),
+    headers: [
+        Header {
+            name: "Host",
+            value: "127.0.0.1:7878",
+        },
+        Header {
+            name: "User-Agent",
+            value: "Mozilla/5.0 (X11; Linux x86_64; rv:127.0) Gecko/20100101 Firefox/127.0",
+        },
+        Header {
+            name: "Accept",
+            value: "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        },
+        Header {
+            name: "Accept-Language",
+            value: "en-US,en;q=0.5",
+        },
+        Header {
+            name: "Accept-Encoding",
+            value: "gzip, deflate, br, zstd",
+        },
+        Header {
+            name: "DNT",
+            value: "1",
+        },
+        Header {
+            name: "Sec-GPC",
+            value: "1",
+        },
+        Header {
+            name: "Connection",
+            value: "keep-alive",
+        },
+        Header {
+            name: "Upgrade-Insecure-Requests",
+            value: "1",
+        },
+        Header {
+            name: "Sec-Fetch-Dest",
+            value: "document",
+        },
+        Header {
+            name: "Sec-Fetch-Mode",
+            value: "navigate",
+        },
+        Header {
+            name: "Sec-Fetch-Site",
+            value: "none",
+        },
+        Header {
+            name: "Sec-Fetch-User",
+            value: "?1",
+        },
+        Header {
+            name: "Priority",
+            value: "u=1",
+        },
+    ],
+}
+(2024-07-21T02:11:41Z INFO) [ferric] Connection established!
+(2024-07-21T02:11:41Z INFO) [ferric::thread_pool] Sending closure to thread pool workers...
+(2024-07-21T02:11:41Z INFO) [ferric::thread_pool] Worker 0 got a job, executing.
+(2024-07-21T02:11:41Z INFO) [ferric] Request parsed!
+(2024-07-21T02:11:41Z DEBUG) [ferric] Request: Request {
+    method: Some(
+        "GET",
+    ),
+    path: Some(
+        "/",
+    ),
+    version: Some(
+        1,
+    ),
+    headers: [
+        Header {
+            name: "Host",
+            value: "127.0.0.1:7878",
+        },
+        Header {
+            name: "User-Agent",
+            value: "Mozilla/5.0 (X11; Linux x86_64; rv:127.0) Gecko/20100101 Firefox/127.0",
+        },
+        Header {
+            name: "Accept",
+            value: "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        },
+        Header {
+            name: "Accept-Language",
+            value: "en-US,en;q=0.5",
+        },
+        Header {
+            name: "Accept-Encoding",
+            value: "gzip, deflate, br, zstd",
+        },
+        Header {
+            name: "DNT",
+            value: "1",
+        },
+        Header {
+            name: "Sec-GPC",
+            value: "1",
+        },
+        Header {
+            name: "Connection",
+            value: "keep-alive",
+        },
+        Header {
+            name: "Upgrade-Insecure-Requests",
+            value: "1",
+        },
+        Header {
+            name: "Sec-Fetch-Dest",
+            value: "document",
+        },
+        Header {
+            name: "Sec-Fetch-Mode",
+            value: "navigate",
+        },
+        Header {
+            name: "Sec-Fetch-Site",
+            value: "none",
+        },
+        Header {
+            name: "Sec-Fetch-User",
+            value: "?1",
+        },
+        Header {
+            name: "Priority",
+            value: "u=1",
+        },
+    ],
+}
+(2024-07-21T02:11:41Z INFO) [ferric] Connection established!
+(2024-07-21T02:11:41Z INFO) [ferric::thread_pool] Sending closure to thread pool workers...
+(2024-07-21T02:11:41Z INFO) [ferric::thread_pool] Worker 1 got a job, executing.
+(2024-07-21T02:11:41Z INFO) [ferric] Request parsed!
+(2024-07-21T02:11:41Z DEBUG) [ferric] Request: Request {
+    method: Some(
+        "GET",
+    ),
+    path: Some(
+        "/",
+    ),
+    version: Some(
+        1,
+    ),
+    headers: [
+        Header {
+            name: "Host",
+            value: "127.0.0.1:7878",
+        },
+        Header {
+            name: "User-Agent",
+            value: "Mozilla/5.0 (X11; Linux x86_64; rv:127.0) Gecko/20100101 Firefox/127.0",
+        },
+        Header {
+            name: "Accept",
+            value: "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        },
+        Header {
+            name: "Accept-Language",
+            value: "en-US,en;q=0.5",
+        },
+        Header {
+            name: "Accept-Encoding",
+            value: "gzip, deflate, br, zstd",
+        },
+        Header {
+            name: "DNT",
+            value: "1",
+        },
+        Header {
+            name: "Sec-GPC",
+            value: "1",
+        },
+        Header {
+            name: "Connection",
+            value: "keep-alive",
+        },
+        Header {
+            name: "Upgrade-Insecure-Requests",
+            value: "1",
+        },
+        Header {
+            name: "Sec-Fetch-Dest",
+            value: "document",
+        },
+        Header {
+            name: "Sec-Fetch-Mode",
+            value: "navigate",
+        },
+        Header {
+            name: "Sec-Fetch-Site",
+            value: "none",
+        },
+        Header {
+            name: "Sec-Fetch-User",
+            value: "?1",
+        },
+        Header {
+            name: "Priority",
+            value: "u=1",
+        },
+    ],
+}
+(2024-07-21T02:11:41Z INFO) [ferric] Connection established!
+(2024-07-21T02:11:41Z INFO) [ferric::thread_pool] Sending closure to thread pool workers...
+(2024-07-21T02:11:41Z INFO) [ferric::thread_pool] Worker 2 got a job, executing.
+(2024-07-21T02:11:41Z INFO) [ferric] Request parsed!
+(2024-07-21T02:11:41Z DEBUG) [ferric] Request: Request {
+    method: Some(
+        "GET",
+    ),
+    path: Some(
+        "/",
+    ),
+    version: Some(
+        1,
+    ),
+    headers: [
+        Header {
+            name: "Host",
+            value: "127.0.0.1:7878",
+        },
+        Header {
+            name: "User-Agent",
+            value: "Mozilla/5.0 (X11; Linux x86_64; rv:127.0) Gecko/20100101 Firefox/127.0",
+        },
+        Header {
+            name: "Accept",
+            value: "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        },
+        Header {
+            name: "Accept-Language",
+            value: "en-US,en;q=0.5",
+        },
+        Header {
+            name: "Accept-Encoding",
+            value: "gzip, deflate, br, zstd",
+        },
+        Header {
+            name: "DNT",
+            value: "1",
+        },
+        Header {
+            name: "Sec-GPC",
+            value: "1",
+        },
+        Header {
+            name: "Connection",
+            value: "keep-alive",
+        },
+        Header {
+            name: "Upgrade-Insecure-Requests",
+            value: "1",
+        },
+        Header {
+            name: "Sec-Fetch-Dest",
+            value: "document",
+        },
+        Header {
+            name: "Sec-Fetch-Mode",
+            value: "navigate",
+        },
+        Header {
+            name: "Sec-Fetch-Site",
+            value: "none",
+        },
+        Header {
+            name: "Sec-Fetch-User",
+            value: "?1",
+        },
+        Header {
+            name: "Priority",
+            value: "u=1",
+        },
+    ],
+}
+(2024-07-21T02:11:41Z INFO) [ferric] Connection established!
+(2024-07-21T02:11:41Z INFO) [ferric::thread_pool] Sending closure to thread pool workers...
+(2024-07-21T02:11:41Z INFO) [ferric::thread_pool] Worker 3 got a job, executing.
+(2024-07-21T02:11:41Z INFO) [ferric] Request parsed!
+(2024-07-21T02:11:41Z DEBUG) [ferric] Request: Request {
+    method: Some(
+        "GET",
+    ),
+    path: Some(
+        "/",
+    ),
+    version: Some(
+        1,
+    ),
+    headers: [
+        Header {
+            name: "Host",
+            value: "127.0.0.1:7878",
+        },
+        Header {
+            name: "User-Agent",
+            value: "Mozilla/5.0 (X11; Linux x86_64; rv:127.0) Gecko/20100101 Firefox/127.0",
+        },
+        Header {
+            name: "Accept",
+            value: "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        },
+        Header {
+            name: "Accept-Language",
+            value: "en-US,en;q=0.5",
+        },
+        Header {
+            name: "Accept-Encoding",
+            value: "gzip, deflate, br, zstd",
+        },
+        Header {
+            name: "DNT",
+            value: "1",
+        },
+        Header {
+            name: "Sec-GPC",
+            value: "1",
+        },
+        Header {
+            name: "Connection",
+            value: "keep-alive",
+        },
+        Header {
+            name: "Upgrade-Insecure-Requests",
+            value: "1",
+        },
+        Header {
+            name: "Sec-Fetch-Dest",
+            value: "document",
+        },
+        Header {
+            name: "Sec-Fetch-Mode",
+            value: "navigate",
+        },
+        Header {
+            name: "Sec-Fetch-Site",
+            value: "none",
+        },
+        Header {
+            name: "Sec-Fetch-User",
+            value: "?1",
+        },
+        Header {
+            name: "Priority",
+            value: "u=1",
+        },
+    ],
+}
+(2024-07-21T02:11:41Z INFO) [ferric] Connection established!
+(2024-07-21T02:11:41Z INFO) [ferric::thread_pool] Sending closure to thread pool workers...
+(2024-07-21T02:11:41Z INFO) [ferric::thread_pool] Worker 4 got a job, executing.
+(2024-07-21T02:11:41Z INFO) [ferric] Request parsed!
+(2024-07-21T02:11:41Z DEBUG) [ferric] Request: Request {
+    method: Some(
+        "GET",
+    ),
+    path: Some(
+        "/",
+    ),
+    version: Some(
+        1,
+    ),
+    headers: [
+        Header {
+            name: "Host",
+            value: "127.0.0.1:7878",
+        },
+        Header {
+            name: "User-Agent",
+            value: "Mozilla/5.0 (X11; Linux x86_64; rv:127.0) Gecko/20100101 Firefox/127.0",
+        },
+        Header {
+            name: "Accept",
+            value: "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        },
+        Header {
+            name: "Accept-Language",
+            value: "en-US,en;q=0.5",
+        },
+        Header {
+            name: "Accept-Encoding",
+            value: "gzip, deflate, br, zstd",
+        },
+        Header {
+            name: "DNT",
+            value: "1",
+        },
+        Header {
+            name: "Sec-GPC",
+            value: "1",
+        },
+        Header {
+            name: "Connection",
+            value: "keep-alive",
+        },
+        Header {
+            name: "Upgrade-Insecure-Requests",
+            value: "1",
+        },
+        Header {
+            name: "Sec-Fetch-Dest",
+            value: "document",
+        },
+        Header {
+            name: "Sec-Fetch-Mode",
+            value: "navigate",
+        },
+        Header {
+            name: "Sec-Fetch-Site",
+            value: "none",
+        },
+        Header {
+            name: "Sec-Fetch-User",
+            value: "?1",
+        },
+        Header {
+            name: "Priority",
+            value: "u=1",
+        },
+    ],
+}
