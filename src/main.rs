@@ -6,6 +6,7 @@ fn main() {
         debug_logs: true,
         num_threads_in_pool: 5usize,
         root_uri: std::path::PathBuf::new(),
+        not_found_path: None,
     });
     app.initialize_logging().unwrap();
     log::info!("Logging system initialized!");

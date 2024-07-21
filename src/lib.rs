@@ -50,14 +50,24 @@ impl App {
     ///This returns an error if the logging system (currently Fern) fails to either apply the
     ///configuration or create a log_file
     pub fn initialize_logging(&self) -> Result<(), fern::InitError> {
+        use fern::colors::{ColoredLevelConfig, Color};
+        let colors = ColoredLevelConfig::new()
+            .info(Color::Green)
+            .warn(Color::Yellow)
+            .error(Color::Red)
+            .debug(Color::Blue);
         fern::Dispatch::new()
-            .format(|out, message, record| {
+            .format(move |out, message, record| {
                 out.finish(format_args!(
-                    "({} {}) [{}] {}",
-                    humantime::format_rfc3339_seconds(SystemTime::now()),
-                    record.level(),
-                    record.target(),
-                    message
+                    "{color_line}[{date} {level} {target} {color_line}] {message}\x1B[0m",
+                    color_line = format_args!(
+                        "\x1B[{}m",
+                        colors.get_color(&record.level()).to_fg_str()
+                    ),
+                    date = humantime::format_rfc3339_seconds(SystemTime::now()),
+                    level = colors.color(record.level()),
+                    target = record.target(),
+                    message =message
                 ))
             })
             .level(match self.config.debug_logs {
@@ -95,6 +105,7 @@ impl App {
 
     fn handle_connection<'a>(&self, mut stream: TcpStream) {
         self.client_thread_pool.execute(move || {
+            let mut stream = stream;
             //This took an ungodly number of hours to get working.
             let raw_req_buf = App::read_request(&mut stream);
             //debug!("Raw request: {:#?}", String::from_utf8(raw_req_buf));
@@ -114,62 +125,8 @@ impl App {
                     eprintln!("Request partially parsed, unable to continue.");
                 }
             }
-            //Request is now parsed, we can begin the tomfoolery
-            debug!("Request: {:#?}", &request);
-            //Dig up the file they requested
-            let mut requested_path = self.config.root_uri.clone();
-            requested_path.push(request.path.unwrap());
-            let  file_res = File::open(requested_path);
-            let response: httparse::Response = match file_res {
-                Ok(ref file) => {
-                    //The file exists, shovel it back to the user
-                    let mut buf = String::new();
-                    file.read_to_string(&mut buf).unwrap();
-                    httparse::Response {
-                        version: Some(1),
-                        code: Some(200),
-                        reason: Some("OK"),
-                        headers: &mut [httparse::Header{name: "Content-Length", value: buf.len().to_string().as_bytes()}]
-                    }
-                },
-                Err(error) => {
-                    //Check if it's a `NotFound` error, if so send back
-                    match error.kind() {
-                        std::io::ErrorKind::NotFound => {
-                            warn!("Requested path {} not found", request.path.unwrap());
-                            let not_found_file = match &self.config.not_found_path {
-                                Some(path) => {
-                                    File::open(path).expect("Provided \"not found\" HTML file not found.")
-                                    //NOTE: find a way to make this into a recoverable error
-                                },
-                                None => {
-                                    let include_path = env!("PWD").to_string() + "404.html";
-                                    File::open(include_path).expect("Could not find default 404.html in the current directory.")
-                                                                    
-                                }
-                            };
-                            //Shovel this back.
-                            httparse::Response {
-                                version: Some(1), //for HTTP/1.1
-                                code: Some(404), //because we didn't find anything
-                                reason: Some("NOT FOUND"),
-                                headers: &mut [httparse::EMPTY_HEADER],
-                            }
-                        },
-                        //NOTE: add other variants like PermissionDenied and the like
-                        _ => {warn!("Other error occured");
-                            //TODO: find a better error code for this
-                            httparse::Response {
-                                version: Some(1),
-                                code: Some(500),
-                                reason: Some("INTERNAL SERVER ERROR"),
-                                headers: &mut [httparse::EMPTY_HEADER],
-                            }
-                        }
-                    }
-                }
-                
-            };
+
+            debug!("Request from client: {:#?}", &request);
         });
     }
 
